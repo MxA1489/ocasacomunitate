@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunitatea „O CASĂ” 🏠</title>
+  <style>
+    :root {
+      --main-blue: #0077ff;
+      --light-blue: #6ad1ff;
+      --accent: #00ff9d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(160deg, var(--main-blue), var(--light-blue));
+      color: #fff;
+      text-align: center;
+      padding: 25px 15px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    header img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 1.9em;
+      margin: 10px 0 5px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.05em;
+      line-height: 1.6;
+      max-width: 90%;
+      margin: 10px auto 25px;
+    }
+
+    .progress-container {
+      background: rgba(255,255,255,0.25);
+      border-radius: 30px;
+      overflow: hidden;
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto 20px;
+      height: 18px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 45%; /* modifică procentul după progresul real */
+      background: var(--accent);
+      border-radius: 30px;
+      transition: width 1s ease;
+    }
+
+    .donate-btn {
+      background: #fff;
+      color: var(--main-blue);
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px 45px;
+      border-radius: 50px;
+      font-size: 1.1em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 10px 0 20px;
+    }
+
+    .donate-btn:hover {
+      background: var(--main-blue);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .iban-box {
+      background: rgba(255,255,255,0.15);
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .iban-text {
+      font-weight: bold;
+      font-size: 1em;
+      word-break: break-all;
+    }
+
+    button.copy-btn {
+      background: var(--accent);
+      color: #003366;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 180px;
+      transition: 0.2s;
+    }
+
+    button.copy-btn:active {
+      transform: scale(0.96);
+    }
+
+    footer {
+      margin-top: auto;
+      font-size: 0.9em;
+      opacity: 0.8;
+      padding-top: 25px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Home_Icon.svg/1024px-Home_Icon.svg.png" alt="Logo O CASĂ">
+    <h1>Comunitatea „O CASĂ” 🏠</h1>
+  </header>
+
+  <p>Ajută-ne să construim o comunitate mai bună! 🙌  
+  Fiecare donație ne apropie de obiectivul nostru comun 💙</p>
+
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <p><b>Progres: 1% din obiectivul actual</b></p>
+
+  <a href="https://revolut.me/leanca1489" class="donate-btn" target="_blank">
+    💸 Donează prin Revolut
+  </a>
+
+  <div class="iban-box">
+    <p><b>IBAN Revolut:</b></p>
+    <p class="iban-text" id="iban">RO86REVO0000149747702604</p>
+    <button class="copy-btn" onclick="copyIBAN()">📋 Copiază IBAN</button>
+  </div>
+
+  <footer>Mulțumim pentru sprijinul tău — împreună construim viitorul! 💖</footer>
+
+  <script>
+    function copyIBAN() {
+      const iban = document.getElementById("iban").innerText;
+      navigator.clipboard.writeText(iban);
+      alert("✅ IBAN copiat cu succes!");
+    }
+  </script>
+</body>
+</html> 
